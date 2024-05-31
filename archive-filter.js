@@ -33,3 +33,23 @@ $(".archive-filter").on("click", function () {
     behavior: "smooth"
   });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Get the URL parameters
+    const params = new URLSearchParams(window.location.search);
+
+    // Check if the 'hl' parameter exists
+    if (params.has('hl')) {
+        // Get the value of the 'hl' parameter
+        const hlClass = params.get('hl');
+
+        // Find the element with the class name equal to the 'hl' parameter value
+        const element = document.querySelector('.' + hlClass);
+
+        // If the element is found, click it
+        if (element) {
+            element.click();
+        }
+    }
+});
+
